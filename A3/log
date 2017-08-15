@@ -1,0 +1,542 @@
+==================================================
+variable: GoodStudent
+possible: ['True', 'False']
+evidence: ['SocioEcon', 'Age']
+Middle, Adolescent: {True: 0.205335, False: 0.794665}
+Prole, Adolescent: {True: 0.095997, False: 0.904003}
+UpperMiddle, Adolescent: {True: 0.483797, False: 0.516203}
+UpperMiddle, Senior: {True: 0.000173, False: 0.999827}
+Middle, Adult: {True: 0.000041, False: 0.999959}
+Wealthy, Adult: {True: 0.001742, False: 0.998258}
+Prole, Senior: {True: 0.000101, False: 0.999899}
+Prole, Adult: {True: 0.000042, False: 0.999958}
+Wealthy, Senior: {True: 0.005000, False: 0.995000}
+Middle, Senior: {True: 0.000248, False: 0.999752}
+Wealthy, Adolescent: {True: 0.423469, False: 0.576531}
+UpperMiddle, Adult: {True: 0.000088, False: 0.999912}
+
+==================================================
+variable: Age
+possible: ['Adolescent', 'Adult', 'Senior']
+prior probabilities: [('Adolescent', '0.20024599508'), ('Adult', '0.60069798604'), ('Senior', '0.19905601888')]
+==================================================
+variable: SocioEcon
+possible: ['Prole', 'Middle', 'UpperMiddle', 'Wealthy']
+evidence: ['Age']
+Senior: {Prole: 0.497413, Middle: 0.202722, UpperMiddle: 0.289869, Wealthy: 0.009995}
+Adult: {Prole: 0.397393, Middle: 0.404185, UpperMiddle: 0.188884, Wealthy: 0.009538}
+Adolescent: {Prole: 0.397843, Middle: 0.396794, UpperMiddle: 0.195626, Wealthy: 0.009736}
+
+==================================================
+variable: RiskAversion
+possible: ['Psychopath', 'Adventurous', 'Normal', 'Cautious']
+evidence: ['Age', 'SocioEcon']
+Senior, UpperMiddle: {Psychopath: 0.007967, Adventurous: 0.091444, Normal: 0.400416, Cautious: 0.500173}
+Senior, Wealthy: {Psychopath: 0.004950, Adventurous: 0.099010, Normal: 0.381188, Cautious: 0.514851}
+Adolescent, Prole: {Psychopath: 0.020700, Adventurous: 0.580103, Normal: 0.298833, Cautious: 0.100364}
+Adult, Wealthy: {Psychopath: 0.010417, Adventurous: 0.279514, Normal: 0.432292, Cautious: 0.277778}
+Senior, Prole: {Psychopath: 0.008783, Adventurous: 0.091964, Normal: 0.405209, Cautious: 0.494044}
+Adolescent, Wealthy: {Psychopath: 0.025253, Adventurous: 0.611111, Normal: 0.267677, Cautious: 0.095960}
+Adult, Prole: {Psychopath: 0.013444, Adventurous: 0.285349, Normal: 0.501550, Cautious: 0.199657}
+Senior, Middle: {Psychopath: 0.009656, Adventurous: 0.042585, Normal: 0.335974, Cautious: 0.611785}
+Adult, Middle: {Psychopath: 0.013960, Adventurous: 0.183125, Normal: 0.601960, Cautious: 0.200955}
+Adolescent, Middle: {Psychopath: 0.021384, Adventurous: 0.385786, Normal: 0.492075, Cautious: 0.100755}
+Adult, UpperMiddle: {Psychopath: 0.013304, Adventurous: 0.284141, Normal: 0.499736, Cautious: 0.202819}
+Adolescent, UpperMiddle: {Psychopath: 0.019893, Adventurous: 0.487121, Normal: 0.394542, Cautious: 0.098444}
+
+==================================================
+variable: VehicleYear
+possible: ['Current', 'Older']
+evidence: ['SocioEcon', 'RiskAversion']
+Wealthy, Adventurous: {Current: 0.903654, Older: 0.096346}
+UpperMiddle, Adventurous: {Current: 0.792300, Older: 0.207700}
+UpperMiddle, Normal: {Current: 0.789402, Older: 0.210598}
+Middle, Normal: {Current: 0.305793, Older: 0.694207}
+Middle, Adventurous: {Current: 0.304489, Older: 0.695511}
+UpperMiddle, Psychopath: {Current: 0.799270, Older: 0.200730}
+Prole, Normal: {Current: 0.151334, Older: 0.848666}
+Prole, Adventurous: {Current: 0.152426, Older: 0.847574}
+Wealthy, Cautious: {Current: 0.893617, Older: 0.106383}
+UpperMiddle, Cautious: {Current: 0.798206, Older: 0.201794}
+Middle, Cautious: {Current: 0.305852, Older: 0.694148}
+Prole, Psychopath: {Current: 0.155594, Older: 0.844406}
+Wealthy, Psychopath: {Current: 0.818182, Older: 0.181818}
+Middle, Psychopath: {Current: 0.310786, Older: 0.689214}
+Wealthy, Normal: {Current: 0.883598, Older: 0.116402}
+Prole, Cautious: {Current: 0.150096, Older: 0.849904}
+
+==================================================
+variable: ThisCarDam
+possible: ['None', 'Mild', 'Moderate', 'Severe']
+evidence: ['Accident', 'RuggedAuto']
+Mild, Football: {None: 0.192272, Mild: 0.756622, Moderate: 0.050795, Severe: 0.000312}
+Severe, Football: {None: 0.000247, Mild: 0.001234, Moderate: 0.007652, Severe: 0.990866}
+None, Football: {None: 0.999880, Mild: 0.000040, Moderate: 0.000040, Severe: 0.000040}
+Severe, Tank: {None: 0.050197, Mild: 0.199662, Moderate: 0.203610, Severe: 0.546531}
+Mild, Tank: {None: 0.720415, Mild: 0.268512, Moderate: 0.010381, Severe: 0.000692}
+Mild, EggShell: {None: 0.001203, Mild: 0.902069, Moderate: 0.095284, Severe: 0.001444}
+Moderate, Tank: {None: 0.046083, Mild: 0.593702, Moderate: 0.308756, Severe: 0.051459}
+Moderate, EggShell: {None: 0.000256, Mild: 0.001538, Moderate: 0.691026, Severe: 0.307179}
+None, EggShell: {None: 0.999915, Mild: 0.000028, Moderate: 0.000028, Severe: 0.000028}
+Severe, EggShell: {None: 0.000172, Mild: 0.000172, Moderate: 0.000172, Severe: 0.999484}
+None, Tank: {None: 0.999739, Mild: 0.000087, Moderate: 0.000087, Severe: 0.000087}
+Moderate, Football: {None: 0.001761, Mild: 0.096479, Moderate: 0.799648, Severe: 0.102113}
+
+==================================================
+variable: RuggedAuto
+possible: ['EggShell', 'Football', 'Tank']
+evidence: ['MakeModel', 'VehicleYear']
+SuperLuxury, Older: {EggShell: 0.166667, Football: 0.458333, Tank: 0.375000}
+Economy, Older: {EggShell: 0.898812, Football: 0.101155, Tank: 0.000033}
+Economy, Current: {EggShell: 0.499010, Football: 0.500858, Tank: 0.000132}
+FamilySedan, Current: {EggShell: 0.194975, Football: 0.607968, Tank: 0.197056}
+SportsCar, Older: {EggShell: 0.947863, Football: 0.039288, Tank: 0.012849}
+SportsCar, Current: {EggShell: 0.946819, Football: 0.043434, Tank: 0.009747}
+FamilySedan, Older: {EggShell: 0.051341, Football: 0.541036, Tank: 0.407623}
+Luxury, Current: {EggShell: 0.099582, Football: 0.599645, Tank: 0.300773}
+Luxury, Older: {EggShell: 0.104177, Football: 0.577887, Tank: 0.317936}
+SuperLuxury, Current: {EggShell: 0.083333, Football: 0.511111, Tank: 0.405556}
+
+==================================================
+variable: Accident
+possible: ['None', 'Mild', 'Moderate', 'Severe']
+evidence: ['Antilock', 'Mileage', 'DrivQuality']
+True, TwentyThou, Poor: {None: 0.397708, Mild: 0.301314, Moderate: 0.201887, Severe: 0.099090}
+False, FiftyThou, Poor: {None: 0.196619, Mild: 0.196115, Moderate: 0.199395, Severe: 0.407871}
+False, Domino, Excellent: {None: 0.976744, Mild: 0.011960, Moderate: 0.006645, Severe: 0.004651}
+False, Domino, Poor: {None: 0.097703, Mild: 0.099417, Moderate: 0.307165, Severe: 0.495715}
+True, FiftyThou, Normal: {None: 0.966150, Mild: 0.022567, Moderate: 0.007616, Severe: 0.003667}
+True, TwentyThou, Excellent: {None: 0.994809, Mild: 0.001947, Moderate: 0.001947, Severe: 0.001298}
+True, FiftyThou, Excellent: {None: 0.990335, Mild: 0.007088, Moderate: 0.001289, Severe: 0.001289}
+False, TwentyThou, Poor: {None: 0.297205, Mild: 0.203130, Moderate: 0.195849, Severe: 0.303817}
+True, FiveThou, Normal: {None: 0.987342, Mild: 0.008055, Moderate: 0.002301, Severe: 0.002301}
+True, TwentyThou, Normal: {None: 0.975371, Mild: 0.011475, Moderate: 0.006717, Severe: 0.006437}
+True, FiftyThou, Poor: {None: 0.297033, Mild: 0.293324, Moderate: 0.207013, Severe: 0.202630}
+True, Domino, Excellent: {None: 0.984615, Mild: 0.005128, Moderate: 0.002564, Severe: 0.007692}
+True, FiveThou, Excellent: {None: 0.991690, Mild: 0.002770, Moderate: 0.002770, Severe: 0.002770}
+False, FiveThou, Normal: {None: 0.984983, Mild: 0.006952, Moderate: 0.003615, Severe: 0.004449}
+True, Domino, Normal: {None: 0.951740, Mild: 0.029181, Moderate: 0.012346, Severe: 0.006734}
+False, FiftyThou, Excellent: {None: 0.980753, Mild: 0.010220, Moderate: 0.004429, Severe: 0.004599}
+False, FiveThou, Excellent: {None: 0.991329, Mild: 0.004335, Moderate: 0.002168, Severe: 0.002168}
+False, TwentyThou, Normal: {None: 0.958954, Mild: 0.019859, Moderate: 0.016432, Severe: 0.004755}
+False, FiftyThou, Normal: {None: 0.951104, Mild: 0.027677, Moderate: 0.015826, Severe: 0.005394}
+True, FiveThou, Poor: {None: 0.683578, Mild: 0.201602, Moderate: 0.078772, Severe: 0.036048}
+True, Domino, Poor: {None: 0.220867, Mild: 0.224932, Moderate: 0.272358, Severe: 0.281843}
+False, TwentyThou, Excellent: {None: 0.988553, Mild: 0.006492, Moderate: 0.003246, Severe: 0.001709}
+False, Domino, Normal: {None: 0.939643, Mild: 0.026612, Moderate: 0.023868, Severe: 0.009877}
+False, FiveThou, Poor: {None: 0.595391, Mild: 0.204338, Moderate: 0.097255, Severe: 0.103016}
+
+==================================================
+variable: MakeModel
+possible: ['SportsCar', 'Economy', 'FamilySedan', 'Luxury', 'SuperLuxury']
+evidence: ['SocioEcon', 'RiskAversion']
+Wealthy, Adventurous: {SportsCar: 0.305921, Economy: 0.019737, FamilySedan: 0.092105, Luxury: 0.338816, SuperLuxury: 0.243421}
+UpperMiddle, Adventurous: {SportsCar: 0.202295, Economy: 0.051192, FamilySedan: 0.294263, Luxury: 0.452074, SuperLuxury: 0.000177}
+UpperMiddle, Normal: {SportsCar: 0.190077, Economy: 0.054023, FamilySedan: 0.295185, Luxury: 0.460611, SuperLuxury: 0.000105}
+Middle, Normal: {SportsCar: 0.146463, Economy: 0.204233, FamilySedan: 0.649203, Luxury: 0.000050, SuperLuxury: 0.000050}
+Middle, Adventurous: {SportsCar: 0.154006, Economy: 0.197451, FamilySedan: 0.648283, Luxury: 0.000130, SuperLuxury: 0.000130}
+UpperMiddle, Psychopath: {SportsCar: 0.241877, Economy: 0.083032, FamilySedan: 0.288809, Luxury: 0.382671, SuperLuxury: 0.003610}
+Prole, Normal: {SportsCar: 0.098677, Economy: 0.702444, FamilySedan: 0.198770, Luxury: 0.000054, SuperLuxury: 0.000054}
+Prole, Adventurous: {SportsCar: 0.097976, Economy: 0.699028, FamilySedan: 0.202834, Luxury: 0.000081, SuperLuxury: 0.000081}
+Wealthy, Cautious: {SportsCar: 0.301754, Economy: 0.010526, FamilySedan: 0.101754, Luxury: 0.378947, SuperLuxury: 0.207018}
+UpperMiddle, Cautious: {SportsCar: 0.204195, Economy: 0.050018, FamilySedan: 0.296881, Luxury: 0.448727, SuperLuxury: 0.000179}
+Middle, Cautious: {SportsCar: 0.143243, Economy: 0.201864, FamilySedan: 0.654648, Luxury: 0.000123, SuperLuxury: 0.000123}
+Prole, Psychopath: {SportsCar: 0.104348, Economy: 0.700870, FamilySedan: 0.191304, Luxury: 0.001739, SuperLuxury: 0.001739}
+Wealthy, Psychopath: {SportsCar: 0.285714, Economy: 0.071429, FamilySedan: 0.142857, Luxury: 0.428571, SuperLuxury: 0.071429}
+Middle, Psychopath: {SportsCar: 0.158182, Economy: 0.201818, FamilySedan: 0.636364, Luxury: 0.001818, SuperLuxury: 0.001818}
+Wealthy, Normal: {SportsCar: 0.307087, Economy: 0.010499, FamilySedan: 0.104987, Luxury: 0.398950, SuperLuxury: 0.178478}
+Prole, Cautious: {SportsCar: 0.100640, Economy: 0.699321, FamilySedan: 0.199847, Luxury: 0.000096, SuperLuxury: 0.000096}
+
+==================================================
+variable: DrivQuality
+possible: ['Poor', 'Normal', 'Excellent']
+evidence: ['DrivingSkill', 'RiskAversion']
+Normal, Cautious: {Poor: 0.000070, Normal: 0.800967, Excellent: 0.198963}
+SubStandard, Psychopath: {Poor: 0.996255, Normal: 0.001873, Excellent: 0.001873}
+Expert, Adventurous: {Poor: 0.012733, Normal: 0.012733, Excellent: 0.974535}
+Normal, Psychopath: {Poor: 0.487871, Normal: 0.200809, Excellent: 0.311321}
+SubStandard, Adventurous: {Poor: 0.999798, Normal: 0.000101, Excellent: 0.000101}
+SubStandard, Cautious: {Poor: 0.999664, Normal: 0.000168, Excellent: 0.000168}
+Normal, Normal: {Poor: 0.000037, Normal: 0.999927, Excellent: 0.000037}
+Expert, Cautious: {Poor: 0.000236, Normal: 0.000236, Excellent: 0.999528}
+Expert, Psychopath: {Poor: 0.310078, Normal: 0.178295, Excellent: 0.511628}
+SubStandard, Normal: {Poor: 0.999876, Normal: 0.000062, Excellent: 0.000062}
+Expert, Normal: {Poor: 0.000208, Normal: 0.000208, Excellent: 0.999583}
+Normal, Adventurous: {Poor: 0.295209, Normal: 0.400910, Excellent: 0.303881}
+
+==================================================
+variable: Mileage
+possible: ['FiveThou', 'TwentyThou', 'FiftyThou', 'Domino']
+prior probabilities: [('FiveThou', '0.098867033989'), ('TwentyThou', '0.401587952361'), ('FiftyThou', '0.398918032459'), ('Domino', '0.100626981191')]
+==================================================
+variable: Antilock
+possible: ['True', 'False']
+evidence: ['MakeModel', 'VehicleYear']
+SuperLuxury, Older: {True: 0.260870, False: 0.739130}
+Economy, Older: {True: 0.000033, False: 0.999967}
+Economy, Current: {True: 0.000660, False: 0.999340}
+FamilySedan, Current: {True: 0.404698, False: 0.595302}
+SportsCar, Older: {True: 0.102434, False: 0.897566}
+SportsCar, Current: {True: 0.905764, False: 0.094236}
+FamilySedan, Older: {True: 0.000040, False: 0.999960}
+Luxury, Current: {True: 0.988976, False: 0.011024}
+Luxury, Older: {True: 0.265487, False: 0.734513}
+SuperLuxury, Current: {True: 0.988827, False: 0.011173}
+
+==================================================
+variable: DrivingSkill
+possible: ['SubStandard', 'Normal', 'Expert']
+evidence: ['Age', 'SeniorTrain']
+Adolescent, False: {SubStandard: 0.502621, Normal: 0.450442, Expert: 0.046937}
+Adolescent, True: {SubStandard: 0.333333, Normal: 0.333333, Expert: 0.333333}
+Adult, True: {SubStandard: 0.333333, Normal: 0.333333, Expert: 0.333333}
+Senior, True: {SubStandard: 0.101852, Normal: 0.600294, Expert: 0.297854}
+Adult, False: {SubStandard: 0.299536, Normal: 0.601185, Expert: 0.099279}
+Senior, False: {SubStandard: 0.393178, Normal: 0.504967, Expert: 0.101855}
+
+==================================================
+variable: SeniorTrain
+possible: ['True', 'False']
+evidence: ['Age', 'RiskAversion']
+Senior, Psychopath: {True: 0.005848, False: 0.994152}
+Adolescent, Adventurous: {True: 0.000103, False: 0.999897}
+Adult, Psychopath: {True: 0.001227, False: 0.998773}
+Senior, Adventurous: {True: 0.000614, False: 0.999386}
+Senior, Cautious: {True: 0.896185, False: 0.103815}
+Adult, Adventurous: {True: 0.000068, False: 0.999932}
+Adult, Cautious: {True: 0.000083, False: 0.999917}
+Adolescent, Cautious: {True: 0.000499, False: 0.999501}
+Adolescent, Psychopath: {True: 0.002404, False: 0.997596}
+Senior, Normal: {True: 0.293246, False: 0.706754}
+Adolescent, Normal: {True: 0.000127, False: 0.999873}
+Adult, Normal: {True: 0.000031, False: 0.999969}
+
+==================================================
+variable: ThisCarCost
+possible: ['Thousand', 'TenThou', 'HundredThou', 'Million']
+evidence: ['ThisCarDam', 'CarValue', 'Theft']
+Moderate, FiveThou, True: {Thousand: 0.200000, TenThou: 0.400000, HundredThou: 0.200000, Million: 0.200000}
+Severe, FiftyThou, True: {Thousand: 0.125000, TenThou: 0.125000, HundredThou: 0.625000, Million: 0.125000}
+None, TwentyThou, False: {Thousand: 0.999837, TenThou: 0.000054, HundredThou: 0.000054, Million: 0.000054}
+Severe, FiftyThou, False: {Thousand: 0.007800, TenThou: 0.001560, HundredThou: 0.989080, Million: 0.001560}
+Moderate, Million, True: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+Mild, Million, False: {Thousand: 0.882353, TenThou: 0.029412, HundredThou: 0.058824, Million: 0.029412}
+Mild, TenThou, True: {Thousand: 0.166667, TenThou: 0.500000, HundredThou: 0.166667, Million: 0.166667}
+Mild, Million, True: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+Moderate, TwentyThou, True: {Thousand: 0.125000, TenThou: 0.125000, HundredThou: 0.625000, Million: 0.125000}
+None, FiveThou, True: {Thousand: 0.076923, TenThou: 0.769231, HundredThou: 0.076923, Million: 0.076923}
+None, FiveThou, False: {Thousand: 0.999900, TenThou: 0.000033, HundredThou: 0.000033, Million: 0.000033}
+None, FiftyThou, False: {Thousand: 0.999599, TenThou: 0.000134, HundredThou: 0.000134, Million: 0.000134}
+Moderate, TwentyThou, False: {Thousand: 0.010512, TenThou: 0.009811, HundredThou: 0.978977, Million: 0.000701}
+Severe, Million, True: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+Severe, TwentyThou, False: {Thousand: 0.004985, TenThou: 0.005401, HundredThou: 0.989198, Million: 0.000415}
+None, Million, True: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+Severe, FiveThou, True: {Thousand: 0.100000, TenThou: 0.700000, HundredThou: 0.100000, Million: 0.100000}
+Severe, TwentyThou, True: {Thousand: 0.142857, TenThou: 0.142857, HundredThou: 0.571429, Million: 0.142857}
+Moderate, Million, False: {Thousand: 0.034483, TenThou: 0.034483, HundredThou: 0.068966, Million: 0.862069}
+None, TenThou, True: {Thousand: 0.083333, TenThou: 0.861111, HundredThou: 0.027778, Million: 0.027778}
+Mild, FiftyThou, True: {Thousand: 0.200000, TenThou: 0.200000, HundredThou: 0.400000, Million: 0.200000}
+None, TenThou, False: {Thousand: 0.999827, TenThou: 0.000058, HundredThou: 0.000058, Million: 0.000058}
+Mild, FiveThou, True: {Thousand: 0.200000, TenThou: 0.400000, HundredThou: 0.200000, Million: 0.200000}
+None, Million, False: {Thousand: 0.988048, TenThou: 0.003984, HundredThou: 0.003984, Million: 0.003984}
+Mild, TwentyThou, False: {Thousand: 0.988832, TenThou: 0.010152, HundredThou: 0.000508, Million: 0.000508}
+Mild, FiveThou, False: {Thousand: 0.949214, TenThou: 0.050181, HundredThou: 0.000302, Million: 0.000302}
+Severe, TenThou, False: {Thousand: 0.007623, TenThou: 0.991684, HundredThou: 0.000347, Million: 0.000347}
+Moderate, TenThou, False: {Thousand: 0.137131, TenThou: 0.861463, HundredThou: 0.000703, Million: 0.000703}
+Mild, FiftyThou, False: {Thousand: 0.985915, TenThou: 0.011737, HundredThou: 0.001174, Million: 0.001174}
+Mild, TwentyThou, True: {Thousand: 0.083333, TenThou: 0.083333, HundredThou: 0.750000, Million: 0.083333}
+Moderate, TenThou, True: {Thousand: 0.125000, TenThou: 0.625000, HundredThou: 0.125000, Million: 0.125000}
+Moderate, FiveThou, False: {Thousand: 0.245074, TenThou: 0.754234, HundredThou: 0.000346, Million: 0.000346}
+Severe, FiveThou, False: {Thousand: 0.049835, TenThou: 0.949851, HundredThou: 0.000157, Million: 0.000157}
+None, FiftyThou, True: {Thousand: 0.117647, TenThou: 0.058824, HundredThou: 0.764706, Million: 0.058824}
+None, TwentyThou, True: {Thousand: 0.051282, TenThou: 0.025641, HundredThou: 0.897436, Million: 0.025641}
+Moderate, FiftyThou, False: {Thousand: 0.005310, TenThou: 0.003540, HundredThou: 0.989381, Million: 0.001770}
+Severe, TenThou, True: {Thousand: 0.083333, TenThou: 0.750000, HundredThou: 0.083333, Million: 0.083333}
+Severe, Million, False: {Thousand: 0.027027, TenThou: 0.027027, HundredThou: 0.081081, Million: 0.864865}
+Moderate, FiftyThou, True: {Thousand: 0.200000, TenThou: 0.200000, HundredThou: 0.400000, Million: 0.200000}
+Mild, TenThou, False: {Thousand: 0.948152, TenThou: 0.050745, HundredThou: 0.000552, Million: 0.000552}
+
+==================================================
+variable: Theft
+possible: ['True', 'False']
+evidence: ['AntiTheft', 'HomeBase', 'CarValue']
+False, Suburb, TwentyThou: {True: 0.000391, False: 0.999609}
+False, City, FiveThou: {True: 0.000815, False: 0.999185}
+False, Suburb, Million: {True: 0.037037, False: 0.962963}
+True, Suburb, TenThou: {True: 0.000609, False: 0.999391}
+False, City, TwentyThou: {True: 0.011643, False: 0.988357}
+False, Suburb, FiveThou: {True: 0.000308, False: 0.999692}
+True, Suburb, FiftyThou: {True: 0.001194, False: 0.998806}
+True, Rural, Million: {True: 0.076923, False: 0.923077}
+False, Secure, Million: {True: 0.015873, False: 0.984127}
+True, City, TenThou: {True: 0.003377, False: 0.996623}
+False, Rural, FiftyThou: {True: 0.003876, False: 0.996124}
+False, Secure, TenThou: {True: 0.000791, False: 0.999209}
+True, Secure, TwentyThou: {True: 0.000140, False: 0.999860}
+True, Secure, FiveThou: {True: 0.000213, False: 0.999787}
+True, Secure, FiftyThou: {True: 0.000221, False: 0.999779}
+True, Rural, TenThou: {True: 0.001181, False: 0.998819}
+False, Rural, TwentyThou: {True: 0.000690, False: 0.999310}
+True, City, FiveThou: {True: 0.000852, False: 0.999148}
+False, City, FiftyThou: {True: 0.016181, False: 0.983819}
+True, City, Million: {True: 0.100000, False: 0.900000}
+False, Suburb, TenThou: {True: 0.000779, False: 0.999221}
+True, Suburb, TwentyThou: {True: 0.000730, False: 0.999270}
+False, Suburb, FiftyThou: {True: 0.002528, False: 0.997472}
+True, Rural, FiveThou: {True: 0.000651, False: 0.999349}
+True, Suburb, Million: {True: 0.058824, False: 0.941176}
+False, Secure, TwentyThou: {True: 0.000498, False: 0.999502}
+True, Rural, TwentyThou: {True: 0.001214, False: 0.998786}
+True, Suburb, FiveThou: {True: 0.000465, False: 0.999535}
+False, City, Million: {True: 0.034483, False: 0.965517}
+True, Secure, TenThou: {True: 0.000277, False: 0.999723}
+False, Rural, TenThou: {True: 0.000502, False: 0.999498}
+True, City, FiftyThou: {True: 0.018100, False: 0.981900}
+False, City, TenThou: {True: 0.004877, False: 0.995123}
+True, City, TwentyThou: {True: 0.004505, False: 0.995495}
+False, Rural, FiveThou: {True: 0.000259, False: 0.999741}
+True, Rural, FiftyThou: {True: 0.002262, False: 0.997738}
+False, Secure, FiftyThou: {True: 0.001429, False: 0.998571}
+False, Rural, Million: {True: 0.071429, False: 0.928571}
+True, Secure, Million: {True: 0.005618, False: 0.994382}
+False, Secure, FiveThou: {True: 0.000525, False: 0.999475}
+
+==================================================
+variable: CarValue
+possible: ['FiveThou', 'TenThou', 'TwentyThou', 'FiftyThou', 'Million']
+evidence: ['MakeModel', 'VehicleYear', 'Mileage']
+Economy, Current, TwentyThou: {FiveThou: 0.103392, TenThou: 0.794194, TwentyThou: 0.101761, FiftyThou: 0.000326, Million: 0.000326}
+SuperLuxury, Current, FiftyThou: {FiveThou: 0.013158, TenThou: 0.013158, TwentyThou: 0.013158, FiftyThou: 0.013158, Million: 0.947368}
+Luxury, Current, Domino: {FiveThou: 0.001255, TenThou: 0.001255, TwentyThou: 0.001255, FiftyThou: 0.994981, Million: 0.001255}
+SportsCar, Current, FiveThou: {FiveThou: 0.001692, TenThou: 0.101523, TwentyThou: 0.796954, FiftyThou: 0.084602, Million: 0.015228}
+SportsCar, Current, Domino: {FiveThou: 0.001802, TenThou: 0.093694, TwentyThou: 0.789189, FiftyThou: 0.099099, Million: 0.016216}
+Luxury, Current, FiveThou: {FiveThou: 0.001282, TenThou: 0.001282, TwentyThou: 0.001282, FiftyThou: 0.994872, Million: 0.001282}
+SportsCar, Older, FiveThou: {FiveThou: 0.023107, TenThou: 0.329910, TwentyThou: 0.589217, FiftyThou: 0.046213, Million: 0.011553}
+Economy, Current, FiveThou: {FiveThou: 0.106469, TenThou: 0.783019, TwentyThou: 0.107817, FiftyThou: 0.001348, Million: 0.001348}
+SportsCar, Current, FiftyThou: {FiveThou: 0.000430, TenThou: 0.093723, TwentyThou: 0.799226, FiftyThou: 0.093723, Million: 0.012898}
+SportsCar, Older, TwentyThou: {FiveThou: 0.156589, TenThou: 0.509457, TwentyThou: 0.293023, FiftyThou: 0.032558, Million: 0.008372}
+SportsCar, Current, TwentyThou: {FiveThou: 0.000418, TenThou: 0.095278, TwentyThou: 0.797743, FiftyThou: 0.097785, Million: 0.008776}
+Luxury, Current, FiftyThou: {FiveThou: 0.000312, TenThou: 0.000312, TwentyThou: 0.000312, FiftyThou: 0.998753, Million: 0.000312}
+Luxury, Current, TwentyThou: {FiveThou: 0.000320, TenThou: 0.000320, TwentyThou: 0.000320, FiftyThou: 0.998720, Million: 0.000320}
+FamilySedan, Older, FiveThou: {FiveThou: 0.195818, TenThou: 0.306795, TwentyThou: 0.496582, FiftyThou: 0.000402, Million: 0.000402}
+SuperLuxury, Current, TwentyThou: {FiveThou: 0.012500, TenThou: 0.012500, TwentyThou: 0.012500, FiftyThou: 0.012500, Million: 0.950000}
+SportsCar, Older, FiftyThou: {FiveThou: 0.395608, TenThou: 0.471698, TwentyThou: 0.102691, FiftyThou: 0.021033, Million: 0.008970}
+Economy, Current, FiftyThou: {FiveThou: 0.096016, TenThou: 0.805029, TwentyThou: 0.098302, FiftyThou: 0.000327, Million: 0.000327}
+SportsCar, Older, Domino: {FiveThou: 0.892449, TenThou: 0.062929, TwentyThou: 0.022883, FiftyThou: 0.009153, Million: 0.012586}
+Economy, Older, Domino: {FiveThou: 0.998678, TenThou: 0.000330, TwentyThou: 0.000330, FiftyThou: 0.000330, Million: 0.000330}
+Economy, Current, Domino: {FiveThou: 0.088643, TenThou: 0.811634, TwentyThou: 0.096953, FiftyThou: 0.001385, Million: 0.001385}
+SuperLuxury, Older, FiftyThou: {FiveThou: 0.062500, TenThou: 0.062500, TwentyThou: 0.062500, FiftyThou: 0.062500, Million: 0.750000}
+SuperLuxury, Older, FiveThou: {FiveThou: 0.142857, TenThou: 0.142857, TwentyThou: 0.142857, FiftyThou: 0.142857, Million: 0.428571}
+Economy, Older, FiftyThou: {FiveThou: 0.990182, TenThou: 0.009568, TwentyThou: 0.000083, FiftyThou: 0.000083, Million: 0.000083}
+FamilySedan, Current, TwentyThou: {FiveThou: 0.000184, TenThou: 0.099613, TwentyThou: 0.899834, FiftyThou: 0.000184, Million: 0.000184}
+Luxury, Older, FiveThou: {FiveThou: 0.009852, TenThou: 0.078818, TwentyThou: 0.211823, FiftyThou: 0.694581, Million: 0.004926}
+Luxury, Older, Domino: {FiveThou: 0.263889, TenThou: 0.166667, TwentyThou: 0.310185, FiftyThou: 0.254630, Million: 0.004630}
+SuperLuxury, Older, Domino: {FiveThou: 0.125000, TenThou: 0.125000, TwentyThou: 0.125000, FiftyThou: 0.125000, Million: 0.500000}
+Luxury, Older, FiftyThou: {FiveThou: 0.092457, TenThou: 0.290754, TwentyThou: 0.295620, FiftyThou: 0.319951, Million: 0.001217}
+Luxury, Older, TwentyThou: {FiveThou: 0.051788, TenThou: 0.149199, TwentyThou: 0.277435, FiftyThou: 0.520345, Million: 0.001233}
+FamilySedan, Older, FiftyThou: {FiveThou: 0.694816, TenThou: 0.204941, TwentyThou: 0.100041, FiftyThou: 0.000101, Million: 0.000101}
+Economy, Older, FiveThou: {FiveThou: 0.247142, TenThou: 0.699731, TwentyThou: 0.052455, FiftyThou: 0.000336, Million: 0.000336}
+Economy, Older, TwentyThou: {FiveThou: 0.700082, TenThou: 0.299588, TwentyThou: 0.000165, FiftyThou: 0.000082, Million: 0.000082}
+FamilySedan, Current, Domino: {FiveThou: 0.000720, TenThou: 0.125360, TwentyThou: 0.872478, FiftyThou: 0.000720, Million: 0.000720}
+SuperLuxury, Current, FiveThou: {FiveThou: 0.062500, TenThou: 0.062500, TwentyThou: 0.062500, FiftyThou: 0.062500, Million: 0.750000}
+FamilySedan, Older, TwentyThou: {FiveThou: 0.501709, TenThou: 0.295738, TwentyThou: 0.202352, FiftyThou: 0.000101, Million: 0.000101}
+FamilySedan, Older, Domino: {FiveThou: 0.987205, TenThou: 0.011595, TwentyThou: 0.000400, FiftyThou: 0.000400, Million: 0.000400}
+SuperLuxury, Current, Domino: {FiveThou: 0.040000, TenThou: 0.040000, TwentyThou: 0.040000, FiftyThou: 0.040000, Million: 0.840000}
+FamilySedan, Current, FiftyThou: {FiveThou: 0.000189, TenThou: 0.099548, TwentyThou: 0.899887, FiftyThou: 0.000189, Million: 0.000189}
+SuperLuxury, Older, TwentyThou: {FiveThou: 0.100000, TenThou: 0.100000, TwentyThou: 0.100000, FiftyThou: 0.100000, Million: 0.600000}
+FamilySedan, Current, FiveThou: {FiveThou: 0.000737, TenThou: 0.092852, TwentyThou: 0.904937, FiftyThou: 0.000737, Million: 0.000737}
+
+==================================================
+variable: HomeBase
+possible: ['Secure', 'City', 'Suburb', 'Rural']
+evidence: ['RiskAversion', 'SocioEcon']
+Cautious, UpperMiddle: {Secure: 0.999462, City: 0.000179, Suburb: 0.000179, Rural: 0.000179}
+Adventurous, Middle: {Secure: 0.008716, City: 0.247561, Suburb: 0.602316, Rural: 0.141408}
+Psychopath, Wealthy: {Secure: 0.384615, City: 0.461538, Suburb: 0.076923, Rural: 0.076923}
+Psychopath, UpperMiddle: {Secure: 0.326087, City: 0.583333, Suburb: 0.076087, Rural: 0.014493}
+Cautious, Wealthy: {Secure: 0.989437, City: 0.003521, Suburb: 0.003521, Rural: 0.003521}
+Adventurous, Wealthy: {Secure: 0.950495, City: 0.003300, Suburb: 0.003300, Rural: 0.042904}
+Psychopath, Prole: {Secure: 0.001742, City: 0.813589, Suburb: 0.047038, Rural: 0.137631}
+Normal, UpperMiddle: {Secure: 0.491502, City: 0.000105, Suburb: 0.408624, Rural: 0.099769}
+Normal, Prole: {Secure: 0.000054, City: 0.798552, Suburb: 0.049423, Rural: 0.151970}
+Adventurous, Prole: {Secure: 0.000081, City: 0.803709, Suburb: 0.047696, Rural: 0.148514}
+Psychopath, Middle: {Secure: 0.134791, City: 0.808743, Suburb: 0.043716, Rural: 0.012750}
+Adventurous, UpperMiddle: {Secure: 0.198446, City: 0.394068, Suburb: 0.304908, Rural: 0.102578}
+Normal, Middle: {Secure: 0.296309, City: 0.000050, Suburb: 0.601820, Rural: 0.101820}
+Cautious, Middle: {Secure: 0.942843, City: 0.000123, Suburb: 0.028946, Rural: 0.028088}
+Normal, Wealthy: {Secure: 0.865789, City: 0.002632, Suburb: 0.002632, Rural: 0.128947}
+Cautious, Prole: {Secure: 0.000096, City: 0.804913, Suburb: 0.043682, Rural: 0.151310}
+
+==================================================
+variable: AntiTheft
+possible: ['True', 'False']
+evidence: ['RiskAversion', 'SocioEcon']
+Cautious, UpperMiddle: {True: 0.999821, False: 0.000179}
+Adventurous, Middle: {True: 0.000130, False: 0.999870}
+Psychopath, Wealthy: {True: 0.545455, False: 0.454545}
+Psychopath, UpperMiddle: {True: 0.051095, False: 0.948905}
+Cautious, Wealthy: {True: 0.996454, False: 0.003546}
+Adventurous, Wealthy: {True: 0.438538, False: 0.561462}
+Psychopath, Prole: {True: 0.001748, False: 0.998252}
+Normal, UpperMiddle: {True: 0.902938, False: 0.097062}
+Normal, Prole: {True: 0.098040, False: 0.901960}
+Adventurous, Prole: {True: 0.000081, False: 0.999919}
+Psychopath, Middle: {True: 0.001828, False: 0.998172}
+Adventurous, UpperMiddle: {True: 0.201342, False: 0.798658}
+Normal, Middle: {True: 0.299356, False: 0.700644}
+Cautious, Middle: {True: 0.999877, False: 0.000123}
+Normal, Wealthy: {True: 0.809524, False: 0.190476}
+Cautious, Prole: {True: 0.949809, False: 0.050191}
+
+==================================================
+variable: PropCost
+possible: ['Thousand', 'TenThou', 'HundredThou', 'Million']
+evidence: ['OtherCarCost', 'ThisCarCost']
+TenThou, HundredThou: {Thousand: 0.000597, TenThou: 0.000597, HundredThou: 0.948091, Million: 0.050716}
+HundredThou, Million: {Thousand: 0.055556, TenThou: 0.055556, HundredThou: 0.055556, Million: 0.833333}
+Million, Thousand: {Thousand: 0.142857, TenThou: 0.142857, HundredThou: 0.142857, Million: 0.571429}
+Thousand, TenThou: {Thousand: 0.000245, TenThou: 0.951411, HundredThou: 0.048098, Million: 0.000245}
+Thousand, Million: {Thousand: 0.038462, TenThou: 0.038462, HundredThou: 0.038462, Million: 0.884615}
+HundredThou, HundredThou: {Thousand: 0.000580, TenThou: 0.000580, HundredThou: 0.612885, Million: 0.385955}
+Million, TenThou: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+Thousand, Thousand: {Thousand: 0.696969, TenThou: 0.303007, HundredThou: 0.000012, Million: 0.000012}
+TenThou, Million: {Thousand: 0.043478, TenThou: 0.043478, HundredThou: 0.043478, Million: 0.869565}
+HundredThou, Thousand: {Thousand: 0.001067, TenThou: 0.001067, HundredThou: 0.979723, Million: 0.018143}
+TenThou, Thousand: {Thousand: 0.001011, TenThou: 0.960566, HundredThou: 0.037412, Million: 0.001011}
+Thousand, HundredThou: {Thousand: 0.000606, TenThou: 0.000606, HundredThou: 0.986675, Million: 0.012114}
+Million, HundredThou: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+HundredThou, TenThou: {Thousand: 0.000236, TenThou: 0.000236, HundredThou: 0.788652, Million: 0.210875}
+TenThou, TenThou: {Thousand: 0.000227, TenThou: 0.594233, HundredThou: 0.405313, Million: 0.000227}
+Million, Million: {Thousand: 0.250000, TenThou: 0.250000, HundredThou: 0.250000, Million: 0.250000}
+
+==================================================
+variable: OtherCarCost
+possible: ['Thousand', 'TenThou', 'HundredThou', 'Million']
+evidence: ['Accident', 'RuggedAuto']
+Mild, Football: {Thousand: 0.980679, TenThou: 0.008414, HundredThou: 0.010595, Million: 0.000312}
+Severe, Football: {Thousand: 0.102938, TenThou: 0.482844, HundredThou: 0.413972, Million: 0.000247}
+None, Football: {Thousand: 0.999880, TenThou: 0.000040, HundredThou: 0.000040, Million: 0.000040}
+Severe, Tank: {Thousand: 0.003948, TenThou: 0.535251, HundredThou: 0.459673, Million: 0.001128}
+Mild, Tank: {Thousand: 0.948097, TenThou: 0.033910, HundredThou: 0.016609, Million: 0.001384}
+Mild, EggShell: {Thousand: 0.988932, TenThou: 0.007459, HundredThou: 0.003369, Million: 0.000241}
+Moderate, Tank: {Thousand: 0.394009, TenThou: 0.313364, HundredThou: 0.291859, Million: 0.000768}
+Moderate, EggShell: {Thousand: 0.598718, TenThou: 0.197436, HundredThou: 0.203590, Million: 0.000256}
+None, EggShell: {Thousand: 0.999915, TenThou: 0.000028, HundredThou: 0.000028, Million: 0.000028}
+Severe, EggShell: {Thousand: 0.198488, TenThou: 0.402990, HundredThou: 0.398350, Million: 0.000172}
+None, Tank: {Thousand: 0.999739, TenThou: 0.000087, HundredThou: 0.000087, Million: 0.000087}
+Moderate, Football: {Thousand: 0.508099, TenThou: 0.193662, HundredThou: 0.297535, Million: 0.000704}
+
+==================================================
+variable: OtherCar
+possible: ['True', 'False']
+evidence: ['SocioEcon']
+Wealthy: {True: 0.960663, False: 0.039337}
+Prole: {True: 0.500275, False: 0.499725}
+UpperMiddle: {True: 0.900737, False: 0.099263}
+Middle: {True: 0.799300, False: 0.200700}
+
+==================================================
+variable: MedCost
+possible: ['Thousand', 'TenThou', 'HundredThou', 'Million']
+evidence: ['Accident', 'Age', 'Cushioning']
+Severe, Adult, Good: {Thousand: 0.902812, TenThou: 0.069071, HundredThou: 0.019560, Million: 0.008557}
+Severe, Senior, Good: {Thousand: 0.580822, TenThou: 0.284932, HundredThou: 0.090411, Million: 0.043836}
+Mild, Adolescent, Poor: {Thousand: 0.942543, TenThou: 0.039120, HundredThou: 0.015892, Million: 0.002445}
+Mild, Senior, Fair: {Thousand: 0.910217, TenThou: 0.065015, HundredThou: 0.012384, Million: 0.012384}
+None, Adult, Fair: {Thousand: 0.999729, TenThou: 0.000090, HundredThou: 0.000090, Million: 0.000090}
+Severe, Adult, Poor: {Thousand: 0.299734, TenThou: 0.319716, HundredThou: 0.197158, Million: 0.183393}
+Severe, Adult, Excellent: {Thousand: 0.946247, TenThou: 0.033469, HundredThou: 0.010142, Million: 0.010142}
+Severe, Senior, Excellent: {Thousand: 0.917476, TenThou: 0.038835, HundredThou: 0.014563, Million: 0.029126}
+Moderate, Adolescent, Excellent: {Thousand: 0.971910, TenThou: 0.016854, HundredThou: 0.008427, Million: 0.002809}
+None, Senior, Fair: {Thousand: 0.999261, TenThou: 0.000246, HundredThou: 0.000246, Million: 0.000246}
+Severe, Senior, Poor: {Thousand: 0.156425, TenThou: 0.234637, HundredThou: 0.318436, Million: 0.290503}
+Moderate, Senior, Good: {Thousand: 0.886029, TenThou: 0.062500, HundredThou: 0.036765, Million: 0.014706}
+None, Adolescent, Good: {Thousand: 0.999004, TenThou: 0.000332, HundredThou: 0.000332, Million: 0.000332}
+Moderate, Senior, Poor: {Thousand: 0.324607, TenThou: 0.285340, HundredThou: 0.178010, Million: 0.212042}
+Mild, Senior, Good: {Thousand: 0.971182, TenThou: 0.020173, HundredThou: 0.005764, Million: 0.002882}
+Moderate, Senior, Fair: {Thousand: 0.471014, TenThou: 0.231884, HundredThou: 0.188406, Million: 0.108696}
+Moderate, Adult, Fair: {Thousand: 0.787879, TenThou: 0.157248, HundredThou: 0.036036, Million: 0.018837}
+Mild, Senior, Excellent: {Thousand: 0.976636, TenThou: 0.014019, HundredThou: 0.004673, Million: 0.004673}
+None, Adult, Good: {Thousand: 0.999739, TenThou: 0.000087, HundredThou: 0.000087, Million: 0.000087}
+None, Senior, Good: {Thousand: 0.999211, TenThou: 0.000263, HundredThou: 0.000263, Million: 0.000263}
+None, Adolescent, Poor: {Thousand: 0.999199, TenThou: 0.000267, HundredThou: 0.000267, Million: 0.000267}
+Mild, Adult, Fair: {Thousand: 0.980504, TenThou: 0.017059, HundredThou: 0.001625, Million: 0.000812}
+Mild, Senior, Poor: {Thousand: 0.876316, TenThou: 0.078947, HundredThou: 0.021053, Million: 0.023684}
+None, Adult, Poor: {Thousand: 0.999789, TenThou: 0.000070, HundredThou: 0.000070, Million: 0.000070}
+Moderate, Adolescent, Good: {Thousand: 0.940800, TenThou: 0.019200, HundredThou: 0.025600, Million: 0.014400}
+Severe, Adolescent, Excellent: {Thousand: 0.933902, TenThou: 0.034115, HundredThou: 0.017058, Million: 0.014925}
+Moderate, Adolescent, Poor: {Thousand: 0.519112, TenThou: 0.199753, HundredThou: 0.178792, Million: 0.102343}
+Moderate, Senior, Excellent: {Thousand: 0.948571, TenThou: 0.028571, HundredThou: 0.005714, Million: 0.017143}
+None, Senior, Poor: {Thousand: 0.999457, TenThou: 0.000181, HundredThou: 0.000181, Million: 0.000181}
+None, Adolescent, Fair: {Thousand: 0.998968, TenThou: 0.000344, HundredThou: 0.000344, Million: 0.000344}
+Moderate, Adult, Good: {Thousand: 0.959064, TenThou: 0.018379, HundredThou: 0.018379, Million: 0.004177}
+Severe, Adolescent, Good: {Thousand: 0.891631, TenThou: 0.075107, HundredThou: 0.022532, Million: 0.010730}
+Severe, Adult, Fair: {Thousand: 0.493039, TenThou: 0.193155, HundredThou: 0.196636, Million: 0.117169}
+Moderate, Adolescent, Fair: {Thousand: 0.802513, TenThou: 0.149013, HundredThou: 0.032316, Million: 0.016158}
+None, Adult, Excellent: {Thousand: 0.999581, TenThou: 0.000140, HundredThou: 0.000140, Million: 0.000140}
+None, Senior, Excellent: {Thousand: 0.998906, TenThou: 0.000365, HundredThou: 0.000365, Million: 0.000365}
+Moderate, Adult, Poor: {Thousand: 0.504498, TenThou: 0.194464, HundredThou: 0.216609, Million: 0.084429}
+Mild, Adult, Good: {Thousand: 0.993269, TenThou: 0.005236, HundredThou: 0.000748, Million: 0.000748}
+Mild, Adolescent, Excellent: {Thousand: 0.992925, TenThou: 0.002358, HundredThou: 0.002358, Million: 0.002358}
+Severe, Adolescent, Poor: {Thousand: 0.287941, TenThou: 0.292043, HundredThou: 0.214930, Million: 0.205086}
+Severe, Senior, Fair: {Thousand: 0.289617, TenThou: 0.325137, HundredThou: 0.218579, Million: 0.166667}
+Mild, Adult, Poor: {Thousand: 0.958360, TenThou: 0.027760, HundredThou: 0.011987, Million: 0.001893}
+Mild, Adolescent, Fair: {Thousand: 0.977162, TenThou: 0.019576, HundredThou: 0.001631, Million: 0.001631}
+Mild, Adult, Excellent: {Thousand: 0.994152, TenThou: 0.003509, HundredThou: 0.001170, Million: 0.001170}
+Mild, Adolescent, Good: {Thousand: 0.983310, TenThou: 0.013908, HundredThou: 0.001391, Million: 0.001391}
+None, Adolescent, Excellent: {Thousand: 0.998415, TenThou: 0.000528, HundredThou: 0.000528, Million: 0.000528}
+Moderate, Adult, Excellent: {Thousand: 0.984231, TenThou: 0.009198, HundredThou: 0.003942, Million: 0.002628}
+Severe, Adolescent, Fair: {Thousand: 0.498480, TenThou: 0.218845, HundredThou: 0.181358, Million: 0.101317}
+
+==================================================
+variable: Cushioning
+possible: ['Poor', 'Fair', 'Good', 'Excellent']
+evidence: ['RuggedAuto', 'Airbag']
+Tank, True: {Poor: 0.000133, Fair: 0.000133, Good: 0.000133, Excellent: 0.999602}
+Football, False: {Poor: 0.100951, Fair: 0.596681, Good: 0.302298, Excellent: 0.000069}
+Football, True: {Poor: 0.000049, Fair: 0.102935, Good: 0.602134, Excellent: 0.294882}
+Tank, False: {Poor: 0.000118, Fair: 0.000118, Good: 0.696745, Excellent: 0.303020}
+EggShell, True: {Poor: 0.503785, Fair: 0.297374, Good: 0.198776, Excellent: 0.000066}
+EggShell, False: {Poor: 0.702664, Fair: 0.297277, Good: 0.000030, Excellent: 0.000030}
+
+==================================================
+variable: Airbag
+possible: ['True', 'False']
+evidence: ['MakeModel', 'VehicleYear']
+SuperLuxury, Older: {True: 0.086957, False: 0.913043}
+Economy, Older: {True: 0.048223, False: 0.951777}
+Economy, Current: {True: 0.999868, False: 0.000132}
+FamilySedan, Current: {True: 0.999926, False: 0.000074}
+SportsCar, Older: {True: 0.095885, False: 0.904115}
+SportsCar, Current: {True: 0.999829, False: 0.000171}
+FamilySedan, Older: {True: 0.199766, False: 0.800234}
+Luxury, Current: {True: 0.999873, False: 0.000127}
+Luxury, Older: {True: 0.603245, False: 0.396755}
+SuperLuxury, Current: {True: 0.994413, False: 0.005587}
+
+==================================================
+variable: ILiCost
+possible: ['Thousand', 'TenThou', 'HundredThou', 'Million']
+evidence: ['Accident']
+Mild: {Thousand: 0.998750, TenThou: 0.001022, HundredThou: 0.000114, Million: 0.000114}
+None: {Thousand: 0.999958, TenThou: 0.000014, HundredThou: 0.000014, Million: 0.000014}
+Moderate: {Thousand: 0.898930, TenThou: 0.051780, HundredThou: 0.028006, Million: 0.021285}
+Severe: {Thousand: 0.807563, TenThou: 0.099183, HundredThou: 0.057929, Million: 0.035324}
+
+==================================================
+variable: DrivHist
+possible: ['Zero', 'One', 'Many']
+evidence: ['DrivingSkill', 'RiskAversion']
+Normal, Cautious: {Zero: 0.948368, One: 0.040423, Many: 0.011209}
+SubStandard, Psychopath: {Zero: 0.003745, One: 0.009363, Many: 0.986891}
+Expert, Adventurous: {Zero: 0.597943, One: 0.304603, Many: 0.097453}
+Normal, Psychopath: {Zero: 0.129380, One: 0.297844, Many: 0.572776}
+SubStandard, Adventurous: {Zero: 0.001922, One: 0.008092, Many: 0.989986}
+SubStandard, Cautious: {Zero: 0.299765, One: 0.297080, Many: 0.403155}
+Normal, Normal: {Zero: 0.902006, One: 0.068599, Many: 0.029394}
+Expert, Cautious: {Zero: 0.999528, One: 0.000236, Many: 0.000236}
+Expert, Psychopath: {Zero: 0.310078, One: 0.341085, Many: 0.348837}
+SubStandard, Normal: {Zero: 0.029160, One: 0.150012, Many: 0.820827}
+Expert, Normal: {Zero: 0.991870, One: 0.007922, Many: 0.000208}
+Normal, Adventurous: {Zero: 0.497939, One: 0.301464, Many: 0.200597}
+
